@@ -2,6 +2,22 @@
 
 BackEnd for a Gympass style App.
 
+Setup:
+
+npm i
+
+Docker:
+  start:
+  docker compose up -d
+  turn-off:
+  docker compose stop
+
+Database:
+  apply:
+  npx prisma migrate dev
+  npx prisma migrate deploy - with production
+  see teble and values:
+  npx prisma studio
 ## RFs - Requisitos funcionais
 
 - [ ] Deve ser possível se cadastrar;
