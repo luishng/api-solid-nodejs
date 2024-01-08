@@ -5,6 +5,7 @@
   "rules": {
     "camelcase": "off",
     "no-useless-constructor": "off",
-    "no-empty-function": "off"
+    "no-empty-function": "off",
+    "prettier/prettier": "off"
   }
 }
