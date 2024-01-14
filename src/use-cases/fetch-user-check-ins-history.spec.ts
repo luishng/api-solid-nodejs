@@ -1,5 +1,5 @@
 import { InMemoryCheckInsRepository } from './../repositories/in-memory/in-memory-check-ins-repository';
-import { expect, it, describe, beforeEach, vi, afterEach } from 'vitest'
+import { expect, it, describe, beforeEach } from 'vitest'
 import { FetchUserCheckInsHistoryUseCase } from './fetch-user-check-ins-history';
 
 let checkInsRepository: InMemoryCheckInsRepository
@@ -34,13 +34,13 @@ describe('Fetch User Check In History Use Case', () => {
 
     expect(checkIns).toHaveLength(2)
     expect(checkIns).toEqual([
-      expect.objectContaining({gym_id: 'gym-01'}),
-      expect.objectContaining({gym_id: 'gym-03'})
+      expect.objectContaining({ gym_id: 'gym-01' }),
+      expect.objectContaining({ gym_id: 'gym-03' })
     ])
   })
 
   it('should be able to fetch paginated check-in history from user.', async () => {
-    for(let i = 1; i<= 22;i++) {
+    for (let i = 1; i <= 22; i++) {
       await checkInsRepository.create({
         gym_id: `gym-${i}`,
         user_id: 'user-01'
@@ -54,8 +54,8 @@ describe('Fetch User Check In History Use Case', () => {
 
     expect(checkIns).toHaveLength(2)
     expect(checkIns).toEqual([
-      expect.objectContaining({gym_id: 'gym-21'}),
-      expect.objectContaining({gym_id: 'gym-22'})
+      expect.objectContaining({ gym_id: 'gym-21' }),
+      expect.objectContaining({ gym_id: 'gym-22' })
     ])
   })
 })
